@@ -20,7 +20,7 @@ router.post('/form', function(req, res, next) {
   let work=req.body.workshops;
 
   const sgMail = require('@sendgrid/mail')
-  const API_KEY='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';
+  const API_KEY ; //api key
 sgMail.setApiKey(API_KEY)
 const msg = {
   to: email, // Change to your recipient
