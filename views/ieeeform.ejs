@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IEEE Form</title>
+    <link rel="stylesheet" href="/stylesheets/form.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bai+Jamjuree:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="logo">
+            <div class="image">
+                <img src="/images/IEEE.jpg" alt="notfound">
+            </div>
+        </div>
+        <br>
+
+        <div class="form">
+            <form method="post">
+                <input type="text" placeholder="Name" id="name" name="name">
+                <br>
+                <br>
+                <input type="email" placeholder="Email" id="email" name="email">
+                <br>
+                <br>
+                <label for="gender">Gender:</label>
+                <label for="gender" style="margin: 0;">male</label>
+                <input type="radio" style="margin: 0;" id="gender" value="male" name="gender">
+                <label for="gender" style="margin: 0 0 0 10px;">female</label>
+                <input type="radio" style="margin: 0;" id="gender" value="female" name="gender">
+                <br>
+                <br>
+                <input type="text" placeholder="University" id="uni" name="university">
+                <br>
+                <br>
+                <input list="workshops" placeholder="Workshops" name="workshops">
+                <datalist id="workshops">
+                    <option value='ML'>
+                    <option value='web'>
+                </datalist>
+                <br>
+                <br>
+                <input class="button" type="submit">
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>
