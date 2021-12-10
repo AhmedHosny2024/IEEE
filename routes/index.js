@@ -1,6 +1,7 @@
 var express = require('express');
 var router = express.Router();
-
+const admin=require("../models").admin;
+const db =require('../models/admin');
 /* GET home page. */
 router.get('/', function(req, res, next) {
   res.render('index', { title: 'Express' });
@@ -18,9 +19,8 @@ router.post('/form', function(req, res, next) {
   let gender=req.body.gender;
   let uni=req.body.university;
   let work=req.body.workshops;
-
   const sgMail = require('@sendgrid/mail')
-  const API_KEY ; //api key
+  const API_KEY='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' ; 
 sgMail.setApiKey(API_KEY)
 const msg = {
   to: email, // Change to your recipient
@@ -37,10 +37,25 @@ sgMail
   .catch((error) => {
     console.error(error)
   })
-  res.render('recivedata', { name, email,gender,uni,work});
+
+  admin.create({
+    Name:name,
+    email:email,
+    univresity: uni,
+    workshop: work,
+    gender: gender,
+  }).then((admin)=>{
+    res.render("recivedata",{ name, email,gender,uni,work});
+  }).catch(console.error);
 });
 
+router.get('/users/tables', function(req, res, next) {
+   admin.findAll()
+   .then((users)=>{
+    //console.log(users),
+    res.render('tables', { title: 'User tables',  users});
+});
+})
 
 
 module.exports = router;
-//data work here

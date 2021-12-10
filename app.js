@@ -6,9 +6,14 @@ var logger = require('morgan');
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
+const db =require('./models/index');
 
 var app = express();
 
+db.sequelize
+    .authenticate()
+    .then(()=>console.log("DB connection successful"))
+    .catch(err=>console.log("error"+ err ));
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
@@ -39,3 +44,6 @@ app.use(function(err, req, res, next) {
 });
 
 module.exports = app;
+
+
+

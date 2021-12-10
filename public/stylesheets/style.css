@@ -1,6 +1,7 @@
 * {
   box-sizing: border-box;
   letter-spacing: 1px;
+  color: #fff;
 }
 
 body {
@@ -20,7 +21,7 @@ img {
   display: flex;
   justify-content: center;
   position: relative;
-  transform: translate(0px, 55px);
+  transform: translate(10%, 55px);
   
 }
 
@@ -37,7 +38,7 @@ img {
   padding: 40px;
   box-shadow: inset 0 1px 4px #fff, inset 0 1px 3px #aaa, 0 2px 4px -3px #666;
   border-radius: 3%;
-
+  width: fit-content;
 }
 
 form {

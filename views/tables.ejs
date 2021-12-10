@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+<head>
+  <title>users-tables</title>
+  <link rel="stylesheet" href="/stylesheets/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bai+Jamjuree:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <div class="logo">
+            <div class="image">
+                <img src="/images/IEEE.jpg" alt="notfound">
+            </div>
+        </div>
+        <br>
+    <div class="form">
+        <table >
+        <thead>
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Email Address</th>
+            <th>University</th>
+            <th>Workshop</th>
+            <th>Gender</th>
+        </tr>
+    </thead>
+    <tbody >
+        <%
+        if(users.length!=0){
+        var i=0;
+        users.forEach(function(data){
+        %>
+        <tr>
+            <td><%=users[i].id %></td> 
+            <td><%=users[i].Name %></td>
+            <td><%=users[i].email %></td>
+            <td><%=users[i].univresity %></td>
+            <td><%=users[i].workshop %></td>
+            <td><%=users[i].gender %></td>
+        </tr>
+        <%  i++; }) %>
+        <% } else{ %>
+            <tr>
+                <td colspan="6">No Data Found</td>
+            </tr>
+        <% } %>
+    </tbody>
+    </table>
+    </div>
+    </div>
+</body>
+</html>
